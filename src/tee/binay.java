@@ -1,6 +1,6 @@
 package tee;
 
-
+// BST
 
 public class binay {
 
