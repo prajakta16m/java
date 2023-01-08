@@ -1,8 +1,11 @@
 package com.study;
 
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.PriorityQueue;
+import java.util.Queue;
 
 public class GraphBFS {
 
@@ -26,13 +29,14 @@ public class GraphBFS {
 
         void BFS(int s) {
             int visited[] = new int[this.V];
-            LinkedList<Integer> queue = new LinkedList();
+           // LinkedList<Integer> queue = new LinkedList();
+            Queue q = new PriorityQueue();
 
             visited[s] = 1;
-            queue.add(s);
-            while(!queue.isEmpty()){
+            q.add(s);
+            while(!q.isEmpty()){
 
-                int x = queue.poll();
+                int x = (Integer) q.poll();
                 System.out.print(x);
 
                 Iterator i = adj[x].iterator();
@@ -40,7 +44,7 @@ public class GraphBFS {
                     Integer n = (Integer) i.next();
                     if(visited[n] != 1) {
                         visited[n] = 1;
-                           queue.add(n);
+                           q.add(n);
                     }
                 }
 
