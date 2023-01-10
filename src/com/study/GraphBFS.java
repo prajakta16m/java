@@ -51,6 +51,22 @@ public class GraphBFS {
             }
 
         }
+
+        void DFS(int n, boolean[] visited ) {
+
+            visited[n] = true;
+            System.out.print(n);
+
+            Iterator i = adj[n].iterator();
+            while(i.hasNext()) {
+                int x = (Integer) i.next();
+                if (!visited[x]) {
+                    DFS(x, visited);
+                }
+            }
+
+        }
+
     }
 
     public static void main (String[] args0){
@@ -63,5 +79,8 @@ public class GraphBFS {
         g.addEdge(2,0);
         g.addEdge(2,3);
         g.BFS(2);
+        System.out.println();
+        boolean y[] = new boolean[4];
+        g.DFS(2, y);
     }
 }
