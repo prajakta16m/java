@@ -35,8 +35,25 @@ public class StringProblems {
         return op;
     }
 
+    public static String reverse(String s) {
+        String ans = "";
+        String[] a = s.split(" ");
+        int n = a.length;
+        for(int i = n-1; i >=0; i--) {
+            ans = (i>0) ? ans.concat(a[i] + " ") : ans.concat(a[i]);
+
+        }
+        return ans;
+    }
+
     public static void main(String args[]) {
-        String result = zigzagConversion("PAYPALISHIRING", 3);
+
+        // zigzagConversion
+        // String result = zigzagConversion("PAYPALISHIRING", 3);
+
+        // reverse string of words
+        String result = reverse("I am Prajakta Hali");
         System.out.println(result);
+
     }
 }
